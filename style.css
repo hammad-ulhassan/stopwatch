@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root{
+    --white: #ffffff;
+    --black: #1d1d1d;
+    --red: #ff6347;
+    --orange: #ff772e;
+    ---gray: #919191;
+}
+
+html{
+    height: 100%;;
+}
+
+body{
+    margin: 0;
+    height: 100%;
+    background-color: var(--white);
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    color: var(--black);
+    font-size: 10rem;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+h2{
+    font-size: 3rem;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+.container{
+    height: 100%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.horizontal{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.flex-start{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content{
+    width: auto;
+    height: auto;
+    padding: 0.25rem;
+}
+
+.float-left{
+    width: auto;
+    align-items: flex-start;
+}
+
+.no-pad{
+    margin: 0;
+    padding: 0;
+}
+
+.orange{
+    color: var(--orange);
+}
+
+.circle{
+    behavior: url(PIE.htc);
+    margin: 1rem;
+    font-size: 2rem;
+    padding: 2rem;
+    border-radius: 50%;
+    border: 0.25rem solid var(--red);
+}
