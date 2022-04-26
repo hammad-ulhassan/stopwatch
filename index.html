@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,28 +8,45 @@
     <title>Stopwatch</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <div class="container">
-        <div class="horizontal">
-            <div class="content">
-                <h1>00:00:21.4</h1>
-            </div>
-            <div class="content">
-                <h2>25</h2>
-            </div>
+    <main class="container">
+        <div class="column">
+            <hgroup class="horizontal">
+                <h1 id="t1">00:00:00.0</h1>
+                <h2 id="t2">00</h2>
+            </hgroup>
+            <h2 class="orange">SPLIT TIME</h2>
+            <section>
+                <button type="button" class="round round--start" id="start" onclick="start()">Start</button>
+                <button type="button" class="round round--start" id="pause" onclick="pause()">Pause</button>
+                <button type="button" class="round round--split" id="split" onclick="split()">Split</button>
+                <button type="button" class="round round--reset" id="reset" onclick="reset()">Reset</button>
+            </section>
+            <hr>
+            <section id="time-list">
+                <!-- <ul class="no-pad">
+                    <li class="time-row">
+                        <h3>#1</h3>
+                        <h3>00:00:16.624</h3>
+                        <h3>Pause</h3>
+                    </li>
+                    <li class="time-row">
+                        <h3>#1</h3>
+                        <h3>00:00:16.624</h3>
+                        <h3>Pause</h3>
+                    </li>
+                    <li class="time-row">
+                        <h3>#1</h3>
+                        <h3>00:00:16.624</h3>
+                        <h3>Pause</h3>
+                    </li>
+                </ul> -->
+                
+            </section>
         </div>
-        <div class="horizontal">
-            <div class="content">
-                <h2 class="orange">SPLIT TIME</h2>
-            </div>
-        </div>
-        <div class="horizontal">
-            <div class="content">
-                <button type="button" class="round round--start">Start</button>
-                <button type="button" class="round round--split">Split</button>
-                <button type="button" class="round round--reset">Reset</button>
-            </div>
-        </div>
-    </div>
+    </main>
+    <script src="./index.js" defer></script>
 </body>
+
 </html>

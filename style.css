@@ -8,6 +8,12 @@
     --gray: #919191;
     --green: #21a69d;
     --blue: #4487d0;
+    --size: 0.8rem;
+    --scale: 1.2;
+}
+
+body>*{
+    outline: 1px solid red;
 }
 
 html{
@@ -36,6 +42,13 @@ h2{
     margin: 0;
 }
 
+h3{
+    font-size: 1.25rem;
+    padding: 0.25rem;
+    border: 0;
+    margin: 0.5rem;
+}
+
 .container{
     height: 100%;
     width: auto;
@@ -46,6 +59,12 @@ h2{
     /* outline: 2px solid red; */
 }
 
+.column{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .horizontal{
     display: flex;
     flex-direction: row;
@@ -54,7 +73,15 @@ h2{
     /* outline: 2px solid green; */
 }
 
-.content{
+.time-row{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+    /* outline: 2px solid green; */
+}
+
+section{
     width: auto;
     height: auto;
     padding: 0.25rem;
@@ -105,4 +132,9 @@ button:active{
     color: var(--white);
     background-color: var(--blue);
     border-color: var(--blue);
+}
+
+#time-list{
+    overflow-y: auto;
+    height: 20vh;
 }
