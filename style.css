@@ -3,8 +3,8 @@
 :root{
     --white: #ffffff;
     --black: #1d1d1d;
-    --red: #ff6347;
-    --orange: #ff772e;
+    --red: #ff2e09;
+    --orange: #ff955c;
     --gray: #919191;
     --green: #21a69d;
     --blue: #4487d0;
@@ -103,6 +103,10 @@ section{
     color: var(--orange);
 }
 
+.red{
+    color: var(--red);
+}
+
 .round{
     font-size: 1.5rem;
     border-radius: 50%;
@@ -137,4 +141,8 @@ button:active{
 #time-list{
     overflow-y: auto;
     height: 20vh;
+}
+
+.content{
+    width: 10%;
 }

@@ -21,12 +21,15 @@ var splitCounter = 0;
 pauseBtn.hidden = true;
 splitBtn.hidden = true;
 
+var paused = false;
+
 function split(){
     splitCounter++;
     let timeParted = getTimeParts(new Date(timeElapsedMain));
      splits.appendChild(
         article(
-            timeText(timeParted.hours, timeParted.minutes, timeParted.seconds, timeParted.milliseconds)
+            timeText(timeParted.hours, timeParted.minutes, timeParted.seconds, timeParted.milliseconds),
+            paused?'Pause':'Split'
             )
         );
 }
@@ -35,17 +38,24 @@ Number.prototype['padStart']= function(length=2, string="0"){
     return this.toString().padStart(length, string);
 }
 
-const article = (time, incident='Pause')=>{
+const article = (time, incident)=>{
     const article = document.createElement("article");
     let h3num = document.createElement("h3");
     let h3time = document.createElement("h3");
     let h3incident = document.createElement("h3");
+
+    let div = document.createElement("div");
+    div.className = "content"
+
+
     h3num.innerText = `#${splitCounter}`
     h3time.innerText = time;
+    h3time.className = paused?"red":"orange"
     h3incident.innerText = incident;
+    div.appendChild(h3incident)
     article.appendChild(h3num)
     article.appendChild(h3time)
-    article.appendChild(h3incident)
+    article.appendChild(div)
     article.className="time-row";
     return article;
 }
@@ -55,6 +65,9 @@ function start(){
     splitBtn.hidden = false;
     pauseBtn.hidden = false;
 
+    if(paused == true){
+        paused =false;
+    }
     if(mainInterval == null){
         startedTime = new Date();
     }
@@ -86,6 +99,7 @@ function clockView({hours, minutes, seconds, ms1, ms2}){
 }
 
 function pause(){
+    paused = true;
     pausedTime = new Date();
     clearInterval(mainInterval);
     pauseBtn.hidden = true;
